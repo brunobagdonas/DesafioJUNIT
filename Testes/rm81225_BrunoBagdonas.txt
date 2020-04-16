@@ -35,3 +35,5 @@ class JulgamentoPrisioneiroTest {
 	}
 
 }
+
+Observação (Resposta 3): Erro na classe Principal (JulgamentoPrisioneiro.java) pela falta de implementação do enum Resposta. 
