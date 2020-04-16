@@ -37,3 +37,52 @@ class JulgamentoPrisioneiroTest {
 }
 
 Observação (Resposta 3): Erro na classe Principal (JulgamentoPrisioneiro.java) pela falta de implementação do enum Resposta. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Etapa de Teste 2
+
+public class JulgamentoPrisioneiro {
+	private int PENA_INOCENCIA = 10;
+	private int PENA_CONDENACAO_MUTUA = 15;
+	private int PENA_CONDENACAO_INDIVIDUAL = 10;
+	private int PENA_CONDENACAO_CUMPLICES = 11;
+	
+	public enum Resposta {
+		DELACAO, NEGACAO //Criado negação pois não cairá no else se apenas tiver delacao
+	}
+
+	public int calculaPena(Resposta respostaPrisioneiroA, Resposta respostaPrisioneiroB) {
+		if (respostaPrisioneiroA == Resposta.DELACAO) {
+			if (respostaPrisioneiroB == Resposta.DELACAO) {
+				return PENA_CONDENACAO_MUTUA;
+			} else {
+				return PENA_INOCENCIA;
+			}
+		} else {
+			if (respostaPrisioneiroB == Resposta.DELACAO) {
+				return PENA_CONDENACAO_INDIVIDUAL;
+			} else {
+				return PENA_CONDENACAO_CUMPLICES;
+			}
+		}
+	}
+}
+
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class JulgamentoPrisioneiroTest {
+
+	@Test
+	void testJulgamento() {
+		fail("Not yet implemented");
+	}
+
+}
+
+
+Observações: Correção do erro de implementação com a adição de enum Resposta.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
