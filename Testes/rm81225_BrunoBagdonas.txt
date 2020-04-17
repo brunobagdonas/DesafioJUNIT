@@ -228,3 +228,26 @@ class JulgamentoPrisioneiroTest {
 Observações: Remoção do enum Resposta na classe de implementação (JulgamentoPrisioneiro.java) para utilização do correspondente que consta na classe (Resposta.java) e alteração do INT PENA_CONDENACAO_MUTUA de 15 para o erro de teste sumir
 (penaSuspeitoA==5 && penaSuspeitoB==5) = Acerto
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Etapa de teste 5
+
+class JulgamentoPrisioneiroTest {
+
+	@Test
+	public void testJulgamento() {
+		Resposta respSuspeitoA = Resposta.NEGACAO;
+		Resposta respSuspeitoB = Resposta.NEGACAO;
+		
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		assertNotNull(jp);
+		
+		int penaSuspeitoA = jp.calculaPena(respSuspeitoA, respSuspeitoB);
+		int penaSuspeitoB = jp.calculaPena(respSuspeitoB, respSuspeitoA);
+		
+		assertEquals(0, penaSuspeitoA);
+		assertEquals(0, penaSuspeitoB);
+		
+	}
+
+}
+
+Observações: Criação de teste de inocencia, com o valor 0 e alteração do INT PENA_INOCENCIA de 10 para 0
